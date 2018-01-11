@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="http://code.icndb.com/jquery.icndb.js "></script>
+</head>
+
+<body>
+    Hola   
+    <ul></ul>
+    <script>   
+        $.icndb.getRandomJoke((response) => { var textoChiste = response.joke; });
+
+        $.icndb.getRandomJokes({
+            number: 10,
+            success: (response) => {
+                response.forEach(element => { $("ul").append('<li>' + element.joke + '</li>'); });
+
+            }
+        });
+    </script>
+</body>
+
+</html>
